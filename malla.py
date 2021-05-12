@@ -25,13 +25,13 @@ g = open("enlaces.txt")
 
 num_enlaces = int(g.readline())
 
-vertices = np.zeros((num_enlaces,3))
+vertices = np.zeros((num_enlaces, 3))
 
 for j in range(num_enlaces):
     d = g.readline()
     d = d.split()
     for k in range(3):
-        vertices[j,k] = float(d[k])           ## Conversion de cadena de caracteres a float. No deja convertirlo directamente a entero.
+        vertices[j, k] = float(d[k])           ## Conversion de cadena de caracteres a float. No deja convertirlo directamente a entero.
 
 g.close()
 
@@ -44,15 +44,15 @@ print("Puntos de cada triangulo")
 print(vertices)
 
 
-colours = ["b","g","r","c","m","y","tab:cyan","tab:orange"]       ## Colores a usar para cada linea.
+colours = ["b", "g", "r", "c", "m", "y", "tab:cyan", "tab:orange"]       ## Colores a usar para cada linea.
 
-plt.plot(coord[:,0],coord[:,1],"o")         ## Coordenadas x vs coordenadas y
+plt.plot(coord[:,0], coord[:,1], "o")         ## Coordenadas x vs coordenadas y
 
 
 for i in range(num_enlaces):
-    plt.plot([coord[vertices[i,0],0],coord[vertices[i,1],0]],[coord[vertices[i,0],1],coord[vertices[i,1],1]],color=colours[i])
-    plt.plot([coord[vertices[i,1],0],coord[vertices[i,2],0]],[coord[vertices[i,1],1],coord[vertices[i,2],1]],color=colours[i])
-    plt.plot([coord[vertices[i,2],0],coord[vertices[i,0],0]],[coord[vertices[i,2],1],coord[vertices[i,0],1]],color=colours[i])
+    plt.plot([coord[vertices[i, 0], 0], coord[vertices[i, 1], 0]], [coord[vertices[i, 0], 1] ,coord[vertices[i, 1], 1]], color=colours[i])
+    plt.plot([coord[vertices[i, 1], 0], coord[vertices[i, 2], 0]], [coord[vertices[i, 1], 1], coord[vertices[i, 2], 1]], color=colours[i])
+    plt.plot([coord[vertices[i, 2], 0], coord[vertices[i, 0], 0]], [coord[vertices[i, 2], 1], coord[vertices[i, 0], 1]], color=colours[i])
 
 plt.xlabel("Coordenadas x del mallado")
 plt.ylabel("Coordenadas y del mallado")
