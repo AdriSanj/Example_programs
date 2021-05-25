@@ -11,7 +11,7 @@ Created on Sun May  9 16:04:16 2021
 import numpy as np
 import matplotlib.pyplot as plt
 import investpy
-from datetime import date
+from datetime import *
 
 #----------------------------------------------------------#
 
@@ -28,7 +28,7 @@ def rentability(Data):
 interval = 60               # Interval of days in the graphic
 
 end_date = date.today()     # Today
-ini_date = end_date - datetime.timedelta(days = interval)   # Initial day.
+ini_date = end_date - timedelta(days = interval)   # Initial day.
 
 # Conversion to format dd/mm/yyyy for the investpy library.
 
